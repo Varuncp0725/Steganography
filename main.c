@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Invalid arguments!\n");
+            printf("\033[31mInvalid arguments!\033[0m\n");
         }
     }
     else if (check_operation_type(argv[1]) == e_decode)
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Invalid arguments!\n");
+            printf("\033[31mInvalid arguments!\033[0m\n");
         }
     }
     else
@@ -56,15 +56,7 @@ int main(int argc, char *argv[])
     }
 
     return 0;
-    // step1 -> call check_operation_type(argv[1]);
-    //  print msg
-    //-e -> encode
-    // declare structure variable EncodeInfo encInfo;
-    // check read_and_validate_encode_args(argv, &encInfo) is e_success or not
-    // no -> print error msg and return e_failure;
-    // yes -> check do_encoding(&encInfo) returning e_success or not
-    // no -> print error msg and stop
-    // yes -> print success msg and stop
+
 }
 
 OperationType check_operation_type(char *symbol)
@@ -82,9 +74,4 @@ OperationType check_operation_type(char *symbol)
     {
         return e_unsupported;
     }
-    // step1 -> check it is -e or -d
-    //-e ->return e_encode
-    //-d -> return e_decode
-
-    // return e_unsupported
 }

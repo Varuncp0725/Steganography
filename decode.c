@@ -25,7 +25,7 @@ Status read_and_validate_decode_args(char *argv[], DecodeInfo *decInfo)
 }
 Status open_image_file(DecodeInfo *decInfo)
 {
-    // open stego image file
+    
     decInfo->fptr_stego_image = fopen(decInfo->stego_image_fname, "rb");
     if (decInfo->fptr_stego_image == NULL)
     {
@@ -92,13 +92,10 @@ Status decode_secret_file_extn(DecodeInfo *decInfo)
         decInfo->extn_secret_file[i] = decode_byte_from_lsb(buffer);
     }
     decInfo->extn_secret_file[decInfo->secret_file_extn_size] = '\0';
-    // Concatenate the extension with secret file (nestin.txt)
-    // decodeInfo->secret_fname = realloc(decodeInfo->secret_fname, sizeof(extn) + 7);
     char fname[30];
     strcpy(fname, decInfo->secret_fname);
     strcat(fname, decInfo->extn_secret_file);
     decInfo->secret_fname = fname;
-    // open secret file in write mode
     decInfo->fptr_secret = fopen(decInfo->secret_fname, "wb");
     return e_success;
 }

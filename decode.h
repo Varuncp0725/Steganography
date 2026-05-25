@@ -18,7 +18,7 @@ typedef struct _DecodeInfo
     FILE *fptr_stego_image;
 
 } DecodeInfo;
-/* Decoding function prototype */
+/* Decoding function prototypes */
 Status read_and_validate_decode_args(char *argv[], DecodeInfo *decInfo);
 Status do_decoding(DecodeInfo *decInfo);
 Status open_image_file(DecodeInfo *decInfo);
