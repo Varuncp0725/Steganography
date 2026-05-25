@@ -12,4 +12,4 @@ A simple Steganography project in C using BMP image files to hide and extract se
 
 ## Author
 
-Varuncp0725
+Varun C P
